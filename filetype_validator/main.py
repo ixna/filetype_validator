@@ -1,5 +1,6 @@
 import filetype
 import os
+from .extension_definition import matching_extensions
 
 def determine_extension(file_object):
     file_name = ""
@@ -19,16 +20,23 @@ def determine_extension(file_object):
     file_ext = os.path.splitext(file_name)[-1]
     return file_ext.replace(".", "")
 
-def compare(extension, mime):
+def compare(file_extension, detected_extension):
     # only check files that have extensions 
-    if extension:
-
+    # check matching extensions for detected type
+    if file_extension and file_extension != detected_extension:
+        return file_extension in matching_extensions[detected_extension]
+    
+    return True
 
 def validate(file_object):
     # get mime type from header signature information
     # extensions for corresponsing header signature reference
     # https://en.wikipedia.org/wiki/List_of_file_signatures
-    extension = determine_extension(file_object)
-    mime = filetype.guess_extension(file_object)
+    file_extension = determine_extension(file_object)
+    detected_extension = filetype.guess_extension(file_object)
 
-    return compare(extension, mime)
+    return compare(file_extension, detected_extension)
+
+
+if __name__ == "__main__":
+     filetype_validator.validate("/Users/isna/temp/xls")
