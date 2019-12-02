@@ -14,9 +14,7 @@ setuptools.setup(
   url='https://github.com/ixna/filetype_validator',
   download_url='https://github.com/ixna/filetype_validator/releases/tag/v0.1',
   keywords=['filetype', 'extension'],
-  install_requires=[
-          'filetype',
-      ],
+  dependency_links=['https://github.com/ixna/filetype.py/tarball/master']
   classifiers=[
     'Development Status :: 3 - Alpha',
     'Intended Audience :: Developers',
