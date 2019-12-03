@@ -12,9 +12,10 @@ setuptools.setup(
   author='isna',
   author_email='isna11583@gmail.com',
   url='https://github.com/ixna/filetype_validator',
-  download_url='https://github.com/ixna/filetype_validator/releases/tag/v0.2.1',
+  download_url='https://github.com/ixna/filetype_validator/releases/tag/v0.2.2',
   keywords=['filetype', 'extension'],
-  dependency_links=['git+https://github.com/ixna/filetype.py'],
+  install_requires=["filetype.py"],
+  dependency_links=['http://github.com/ixna/filetype.py/tarball/master#egg=filetype.py-1.0.6'],
   classifiers=[
     'Development Status :: 3 - Alpha',
     'Intended Audience :: Developers',
