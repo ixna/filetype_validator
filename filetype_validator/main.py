@@ -18,7 +18,9 @@ def determine_extension(file_object):
         file_name = os.path.basename(file_object)
 
     file_ext = os.path.splitext(file_name)[-1]
-    return file_ext.replace(".", "")
+    # extension should always in lowercase to match with return from 
+    # filetype.py detection
+    return file_ext.replace(".", "").lower()
 
 def compare(file_extension, detected_extension):
     # only check files that have extensions 
