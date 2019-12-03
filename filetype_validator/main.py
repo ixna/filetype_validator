@@ -24,7 +24,7 @@ def compare(file_extension, detected_extension):
     # only check files that have extensions 
     # check matching extensions for detected type
     if file_extension and file_extension != detected_extension:
-        return file_extension in matching_extensions[detected_extension]
+        return file_extension in matching_extensions.get(detected_extension, [])
     
     return True
 
