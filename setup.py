@@ -1,4 +1,7 @@
 import setuptools
+import os
+
+os.system('pip install --user git+https://github.com/ixna/filetype.py.git@master')
 
 with open("README.md", "r") as fh:
     description_text = fh.read()
@@ -14,8 +17,6 @@ setuptools.setup(
   url='https://github.com/ixna/filetype_validator',
   download_url='https://github.com/ixna/filetype_validator/releases/tag/v0.2.5',
   keywords=['filetype', 'extension'],
-  install_requires=['filetype==1.0.6'],
-  dependency_links=['git+http://github.com/ixna/filetype.py/tarball/master#egg=filetype-1.0.6'],
   classifiers=[
     'Development Status :: 3 - Alpha',
     'Intended Audience :: Developers',
