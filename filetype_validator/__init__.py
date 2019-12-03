@@ -5,5 +5,5 @@ from __future__ import absolute_import
 from .main import *  # noqa
 
 # Current package semver version
-__version__ = version = '0.2.2'
+__version__ = version = '0.2.3'
 
