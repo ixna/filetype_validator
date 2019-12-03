@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 setuptools.setup(
   name='filetype_validator',
   packages=['filetype_validator'],
-  version='0.2.1',
+  version='0.2.2',
   license='MIT',
   description=description_text,
   author='isna',
