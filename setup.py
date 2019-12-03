@@ -1,21 +1,19 @@
 import setuptools
 import os
 
-os.system('pip install --user git+https://github.com/ixna/filetype.py.git@master')
-
 with open("README.md", "r") as fh:
     description_text = fh.read()
 
 setuptools.setup(
   name='filetype_validator',
   packages=['filetype_validator'],
-  version='0.2.6',
+  version='0.2.7',
   license='MIT',
   description=description_text,
   author='isna',
   author_email='isna11583@gmail.com',
   url='https://github.com/ixna/filetype_validator',
-  download_url='https://github.com/ixna/filetype_validator/releases/tag/v0.2.6',
+  download_url='https://github.com/ixna/filetype_validator/releases/tag/v0.2.7',
   keywords=['filetype', 'extension'],
   classifiers=[
     'Development Status :: 3 - Alpha',
