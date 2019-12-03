@@ -6,15 +6,15 @@ with open("README.md", "r") as fh:
 setuptools.setup(
   name='filetype_validator',
   packages=['filetype_validator'],
-  version='0.2.4',
+  version='0.2.5',
   license='MIT',
   description=description_text,
   author='isna',
   author_email='isna11583@gmail.com',
   url='https://github.com/ixna/filetype_validator',
-  download_url='https://github.com/ixna/filetype_validator/releases/tag/v0.2.4',
+  download_url='https://github.com/ixna/filetype_validator/releases/tag/v0.2.5',
   keywords=['filetype', 'extension'],
-  install_requires=["filetype"],
+  install_requires=["filetype==1.0.6"],
   dependency_links=['http://github.com/ixna/filetype.py/tarball/master#egg=filetype-1.0.6'],
   classifiers=[
     'Development Status :: 3 - Alpha',
