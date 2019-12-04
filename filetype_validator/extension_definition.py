@@ -4,5 +4,6 @@ matching_extensions = dict(
         "pk3", "pk4", "pptx", "usdz", "vsdx", "xlsx", 
         "xpi"],
     doc=["doc", "ppt", "xls"],
-    mp4=["m4a", "mp4", "m4v", "flv"]
+    mp4=["m4a", "mp4", "m4v", "flv"],
+    jpg=["jpeg", "jpeg", "jpe"],
 )

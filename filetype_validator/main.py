@@ -3,6 +3,11 @@ import os
 from .extension_definition import matching_extensions
 from io import BufferedReader
 
+def reset_pointer(file_object):
+    # return read pointer to initial so buffered reader object 
+    # can be re-read on caller side
+    file_object.seek(0)
+
 def determine_extension(file_object):
     file_name = ""
     try:
@@ -10,18 +15,16 @@ def determine_extension(file_object):
         # BufferedReader object
         if type(file_object) == BufferedReader:
             file_name = file_object.name
+            reset_pointer(file_object)
         elif type(file_object) == str:
             file_name = os.path.basename(file_object)
         else:
             # try from werkzeug FileStorage
             file_name = file_object.filename
+            reset_pointer(file_object)
     except AttributeError:
         # Take no action for now
         pass
-    else:
-        # return read pointer to initial so buffered reader object 
-        # can be re-read on caller side
-        file_object.seek(0)
     
     file_ext = os.path.splitext(file_name)[-1]
     # extension should always in lowercase to match with return from 
@@ -44,7 +47,3 @@ def validate(file_object):
     detected_extension = filetype.guess_extension(file_object)
 
     return compare(file_extension, detected_extension)
-
-
-if __name__ == "__main__":
-     filetype_validator.validate("/Users/isna/temp/xls")
